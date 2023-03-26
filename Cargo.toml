@@ -1,0 +1,11 @@
+[package]
+name = "build-alert"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2", default-features = false, features = ["parsing", "proc-macro"] }
+termcolor = "1"
