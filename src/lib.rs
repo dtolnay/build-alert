@@ -1,5 +1,6 @@
 use proc_macro::TokenStream;
 use std::io::Write;
+use std::process;
 use syn::{parse_macro_input, LitStr};
 use termcolor::{Color, ColorChoice, ColorSpec, StandardStream, WriteColor};
 
@@ -19,6 +20,7 @@ fn do_alert(color: Color, input: TokenStream) -> TokenStream {
     let ref mut stderr = StandardStream::stderr(ColorChoice::Auto);
     let color_spec = ColorSpec::new().set_fg(Some(color)).clone();
     let mut has_nonspace = false;
+    let mut says_error = false;
 
     for mut line in message.lines() {
         if !has_nonspace {
@@ -30,6 +32,7 @@ fn do_alert(color: Color, input: TokenStream) -> TokenStream {
                 let _ = stderr.set_color(color_spec.clone().set_bold(true));
                 let _ = write!(stderr, "{}", heading);
                 has_nonspace = true;
+                says_error = heading == "ERROR";
             }
             line = rest;
         }
@@ -45,7 +48,11 @@ fn do_alert(color: Color, input: TokenStream) -> TokenStream {
     let _ = stderr.reset();
     let _ = writeln!(stderr);
 
-    TokenStream::new()
+    if color == Color::Red && says_error {
+        process::exit(1);
+    } else {
+        TokenStream::new()
+    }
 }
 
 fn split_heading(s: &str) -> (Option<&str>, Option<&str>, &str) {
