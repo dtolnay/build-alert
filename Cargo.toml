@@ -1,7 +1,13 @@
 [package]
 name = "build-alert"
 version = "0.0.0"
+authors = ["David Tolnay <dtolnay@gmail.com>"]
+categories = ["development-tools::build-utils"]
+description = "Display a message in the Cargo build output during compilation."
+documentation = "https://docs.rs/build-alert"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/dtolnay/build-alert"
 
 [lib]
 proc-macro = true
