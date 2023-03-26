@@ -4,7 +4,7 @@ Display a message in the Cargo build output during compilation.
 
 ```toml
 [dependencies]
-build-alert = "0"
+build-alert = "0.1"
 ```
 
 <br>

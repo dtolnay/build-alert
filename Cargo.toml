@@ -1,6 +1,6 @@
 [package]
 name = "build-alert"
-version = "0.0.0"
+version = "0.1.0"
 authors = ["David Tolnay <dtolnay@gmail.com>"]
 categories = ["development-tools::build-utils"]
 description = "Display a message in the Cargo build output during compilation."
