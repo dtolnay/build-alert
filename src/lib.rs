@@ -25,11 +25,13 @@ use std::process;
 use syn::{parse_macro_input, LitStr};
 use termcolor::{Color, ColorChoice, ColorSpec, StandardStream, WriteColor};
 
+/// For <kbd>NOTE:</kbd> or <kbd>WARNING:</kbd> alerts.
 #[proc_macro]
 pub fn yellow(input: TokenStream) -> TokenStream {
     do_alert(Color::Yellow, input)
 }
 
+/// For <kbd>ERROR:</kbd> alerts.
 #[proc_macro]
 pub fn red(input: TokenStream) -> TokenStream {
     do_alert(Color::Red, input)
