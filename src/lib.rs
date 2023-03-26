@@ -1,3 +1,5 @@
+//! Display a message in the Cargo build output during compilation.
+//!
 //! # Example
 //!
 //! ```
