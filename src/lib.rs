@@ -20,6 +20,8 @@
 //!   to bypass this check.
 //! "}
 //! ```
+//!
+//! ![screenshot](https://user-images.githubusercontent.com/1940490/227811885-3eca7b65-0425-4be5-aa1a-cf52d8014817.png)
 
 use proc_macro::TokenStream;
 use std::io::Write;
