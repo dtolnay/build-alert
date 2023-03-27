@@ -23,11 +23,7 @@
 //!
 //! ![screenshot](https://user-images.githubusercontent.com/1940490/227811885-3eca7b65-0425-4be5-aa1a-cf52d8014817.png)
 
-#![allow(
-    clippy::if_not_else,
-    clippy::toplevel_ref_arg,
-    clippy::uninlined_format_args
-)]
+#![allow(clippy::toplevel_ref_arg, clippy::uninlined_format_args)]
 
 use proc_macro::TokenStream;
 use std::io::Write;
@@ -69,12 +65,12 @@ fn do_alert(color: Color, input: TokenStream) -> TokenStream {
             }
             line = rest;
         }
-        if !line.is_empty() {
+        if line.is_empty() {
+            let _ = writeln!(stderr);
+        } else {
             let _ = stderr.set_color(&color_spec);
             let _ = writeln!(stderr, "{}", line);
             has_nonspace = has_nonspace || line.contains(|ch: char| ch != ' ');
-        } else {
-            let _ = writeln!(stderr);
         }
     }
 
