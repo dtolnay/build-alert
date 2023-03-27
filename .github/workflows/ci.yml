@@ -8,6 +8,9 @@ on:
 permissions:
   contents: read
 
+env:
+  RUSTFLAGS: -Dwarnings
+
 jobs:
   pre_ci:
     uses: dtolnay/.github/.github/workflows/pre_ci.yml@master
