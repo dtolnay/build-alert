@@ -1,5 +1,10 @@
 # build-alert
 
+[<img alt="github" src="https://img.shields.io/badge/github-dtolnay/build--alert-8da0cb?style=for-the-badge&labelColor=555555&logo=github" height="20">](https://github.com/dtolnay/build-alert)
+[<img alt="crates.io" src="https://img.shields.io/crates/v/build-alert.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/build-alert)
+[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-build--alert-66c2a5?style=for-the-badge&labelColor=555555&logo=docs.rs" height="20">](https://docs.rs/build-alert)
+[<img alt="build status" src="https://img.shields.io/github/actions/workflow/status/dtolnay/build-alert/ci.yml?branch=master&style=for-the-badge" height="20">](https://github.com/dtolnay/build-alert/actions?query=branch%3Amaster)
+
 Display a message in the Cargo build output during compilation.
 
 ```toml
