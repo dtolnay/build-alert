@@ -23,6 +23,12 @@
 //!
 //! ![screenshot](https://user-images.githubusercontent.com/1940490/227811885-3eca7b65-0425-4be5-aa1a-cf52d8014817.png)
 
+#![allow(
+    clippy::if_not_else,
+    clippy::toplevel_ref_arg,
+    clippy::uninlined_format_args
+)]
+
 use proc_macro::TokenStream;
 use std::io::Write;
 use std::process;
