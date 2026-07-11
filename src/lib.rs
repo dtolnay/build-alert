@@ -87,9 +87,9 @@ fn do_alert(color: Color, input: TokenStream) -> TokenStream {
 
     if color == Color::Red && says_error {
         process::exit(1);
-    } else {
-        TokenStream::new()
     }
+
+    TokenStream::new()
 }
 
 fn split_heading(s: &str) -> (Option<&str>, Option<&str>, &str) {
